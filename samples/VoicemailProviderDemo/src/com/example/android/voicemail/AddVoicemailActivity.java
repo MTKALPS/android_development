@@ -1,4 +1,9 @@
 /*
+* Copyright (C) 2014 MediaTek Inc.
+* Modification based on code covered by the mentioned copyright
+* and/or permission notice(s).
+*/
+/*
  * Copyright (C) 2011 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -166,6 +171,12 @@ public class AddVoicemailActivity extends Activity {
     }
 
     private void handleRecordingResult(int resultCode, Intent data) {
+        /// M: ALPS01560789 data maybe null
+        if (data == null) {
+            logger.e("onActivityResult: data is null, resultCode : " + resultCode);
+            return;
+        }
+
         if (resultCode != RESULT_OK) {
             handleError(new Exception("Failed to do recording. Error Code: " + resultCode));
         }

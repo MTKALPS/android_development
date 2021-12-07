@@ -14,14 +14,14 @@
 # limitations under the License.
 #
 
-LOCAL_PATH:= $(call my-dir)
-include $(CLEAR_VARS)
+# LOCAL_PATH:= $(call my-dir)
+# include $(CLEAR_VARS)
 
-LOCAL_MODULE_TAGS := samples tests
+# LOCAL_MODULE_TAGS := samples tests
 
-LOCAL_SRC_FILES := $(call all-subdir-java-files)
+# LOCAL_SRC_FILES := $(call all-subdir-java-files)
 
-LOCAL_PACKAGE_NAME := GestureBuilder
-LOCAL_SDK_VERSION := current
+# LOCAL_PACKAGE_NAME := GestureBuilder
+# LOCAL_SDK_VERSION := current
 
-include $(BUILD_PACKAGE)
+# include $(BUILD_PACKAGE)

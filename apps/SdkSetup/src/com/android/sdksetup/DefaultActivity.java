@@ -1,4 +1,9 @@
 /*
+* Copyright (C) 2014 MediaTek Inc.
+* Modification based on code covered by the mentioned copyright
+* and/or permission notice(s).
+*/
+/*
  * Copyright (C) 2008 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -39,6 +44,7 @@ public class DefaultActivity extends Activity {
 
         // Add a persistent setting to allow other apps to know the device has been provisioned.
         Settings.Global.putInt(getContentResolver(), Settings.Global.DEVICE_PROVISIONED, 1);
+        Settings.Secure.putInt(getContentResolver(), Settings.Secure.USER_SETUP_COMPLETE, 1);
 
         Settings.Secure.putInt(getContentResolver(), Settings.Secure.USER_SETUP_COMPLETE, 1);
 
