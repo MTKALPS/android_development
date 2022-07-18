@@ -199,7 +199,8 @@ public class BadBehaviorActivity extends Activity {
         anr_broadcast.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Log.i(TAG, "ANR broadcast pressed -- about to send");
-                sendOrderedBroadcast(new Intent("com.android.development.BAD_BEHAVIOR"), null);
+                /// M: ANR Deubugging mechanism
+                sendOrderedBroadcast(new Intent("com.android.development.BAD_BEHAVIOR").addFlags(Intent.FLAG_RECEIVER_FOREGROUND), null);
             }
         });
 

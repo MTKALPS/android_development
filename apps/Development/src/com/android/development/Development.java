@@ -23,9 +23,22 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.provider.Settings;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.os.Bundle;
 
 public class Development extends LauncherActivity
 {
+    @Override
+    protected void onCreate(Bundle icicle) {
+        super.onCreate(icicle);
+        
+        LinearLayout topPanel = (LinearLayout) findViewById(com.android.internal.R.id.topPanel);
+        if (topPanel != null) {
+            topPanel.setVisibility(View.GONE);
+        }
+    }
+
     @Override
     protected Intent getTargetIntent() {
         Intent targetIntent = new Intent(Intent.ACTION_MAIN, null);

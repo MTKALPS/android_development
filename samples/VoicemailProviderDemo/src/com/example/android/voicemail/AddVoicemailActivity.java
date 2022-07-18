@@ -166,6 +166,12 @@ public class AddVoicemailActivity extends Activity {
     }
 
     private void handleRecordingResult(int resultCode, Intent data) {
+        /// M: ALPS01560789 data maybe null
+        if (data == null) {
+            logger.e("onActivityResult: data is null, resultCode : " + resultCode);
+            return;
+        }
+
         if (resultCode != RESULT_OK) {
             handleError(new Exception("Failed to do recording. Error Code: " + resultCode));
         }

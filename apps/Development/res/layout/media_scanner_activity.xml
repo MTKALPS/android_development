@@ -31,7 +31,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="@string/scancard"
-        android:onClick="startScan" />
+        android:onClick="startScan"
+        android:enabled="false" />
 
     <LinearLayout
         android:layout_width="match_parent"
